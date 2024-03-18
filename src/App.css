@@ -1,9 +1,78 @@
 /* Add styling for your page here */
 
 .App {
-
+    margin: 10%;
 }
 
-.BakeryItem {
-  
+.display{
+   
+    font-size: x-large;
 }
+.bakery-item{
+    padding: 5%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.container{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.BakeryItem{
+    border-radius: 10px;
+    overflow: hidden;
+    justify-content: center;
+    margin-bottom: 20px;
+    max-width: 500px;
+    /* background-color: lightgrey; */
+    height: 100%;
+    width: 100%;
+}
+
+.bakery-item-image{
+    display: flex;
+    object-fit: cover;
+    width: 400px;
+    height: 300px;
+}
+.bakery-item-text{
+    padding: 1rem;
+}
+.bakery-item-label{
+    font-weight: 700;
+    font-size: x-large;
+    margin-bottom: 20px;
+}
+
+/* .product-info{
+    width:75%;
+    grid-template-columns: auto auto;
+    flex-direction: column;
+} */
+.item{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgb(249, 249, 249);
+    width: 400px;
+    
+}
+
+.price{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.cart{
+
+    width: 30%;
+    padding: 12px
+
+}
+/* .button{
+    align-items: flex-end;
+} */

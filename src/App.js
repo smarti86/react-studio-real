@@ -13,42 +13,56 @@ function App() {
   // TODO: use useState to create a state variable to hold the state of the cart
   /* add your cart state code here */
 
-    const [card, setCard] = useState({});
+    const [card, setCard] = useState([]);
+    const [cardTotal, setCardTotal] = useState(0)
 
-    // Citation: TrueQ's ReactJS: How to work with Map in useState hook
-    // const updateCard = (key, value) => {
-    //   setCard(prevCard => new Map(map.set(key, value)));
-    // }
+  // Citation: TrueQ's ReactJS: How to work with Map in useState hook
+  // const updateCard = (key, value) => {
+  //   setCard(prevCard => new Map(map.set(key, value)));
+  // }
 
-  
-
+  // Citation: Watched https://www.youtube.com/watch?v=tEMrD9t85v4&ab_channel=PedroTech 
+  // helpful but ultimately went off of my notes from section and the slides
   return (
     <div className="App">
       <div>
 
         <h1>Sandy's Bakery</h1> {}
+        <div class="display">
 
-        {bakeryData.map((item, index) => ( 
-          <BakeryItem data={item} index={index} 
-          buttonUpdate = {() => {
-            setCard((prevCard) => {
-              const newCard = {...prevCard};
-              newCard[item.name] = (newCard[item.name] || 0) + item.price;
-              return newCard
-            })}} />
-        ))}
+          <div class="container">
+            <div class="bakery-item">
+              {bakeryData.map((item, index) => ( 
+                <BakeryItem 
+                card={card}
+                setCard={setCard}
+            
+                cardTotal={cardTotal}
+                setCardTotal={setCardTotal}
 
-        <div>
-          <h2>Cart</h2>
-          {card.map} 
-          
-          {/* find the sum 
-              keep track of how many prices I'e added 
-              display name and price
-               */}
-        </div>
+                item={item}
+                id={index} 
+                key={index}
+                />
+              ))
+              }
+              </div>
+        
+            <div class="cart">
+              <h2>Cart</h2>
+              {card.map((item,index) => (
+                <p key={index}>
+                  {item.count}x {item.name}
+                </p>
+              ))
+              } 
+              
+            <p class="total">${cardTotal.toFixed(2)}</p>
+            </div>
+            </div>
+            </div>
+
       </div>
-
     
       </div>
   );
